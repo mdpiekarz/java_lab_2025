@@ -1,6 +1,6 @@
 public class Segment {
-    public Point start;
-    public Point end;
+    private Point start;
+    private Point end;
 
 //    public Segment(Point start, Point end) {
 //        this.start = start;
@@ -9,13 +9,13 @@ public class Segment {
 
     //konstruktor kopiujący
     public Segment(Point start, Point end){
-        this.start = new Point(start.x,start.y);
-        this.end = new Point(end.x,end.y);
+        this.start = new Point(start.getX(),start.getY());
+        this.end = new Point(end.getX(),end.getY());
     }
 
     //Metoda zwracająca długość odcinka
     public double length() {
-        return Math.sqrt(Math.pow(end.x - start.x, 2) + Math.pow(end.y - start.y, 2));
+        return Math.sqrt(Math.pow(end.getX() - start.getX(), 2) + Math.pow(end.getY() - start.getY(), 2));
     }
 
     // Metoda statyczna zwracająca najdłuższy segment z tablicy
@@ -31,5 +31,9 @@ public class Segment {
             }
         }
         return longest;
+    }
+
+    public String toString(){
+        return "Segment: ["+ start.toString()+ ", "+ end.toString()+"]";
     }
 }

@@ -1,19 +1,5 @@
 public class Main {
 
-    // Metoda statyczna zwracająca najdłuższy segment z tablicy
-//    public static Segment findLongestSegment(Segment[] segments) {
-//        if (segments == null || segments.length == 0) {
-//            return null;
-//        }
-//
-//        Segment longest = segments[0];
-//        for (Segment segment : segments) {
-//            if (segment.length() > longest.length()) {
-//                longest = segment;
-//            }
-//        }
-//        return longest;
-//    }
     public static void main(String args[]){
         //System.out.println("Witaj Świecie!");
         // Tworzenie obiektu Point i ustawienie współrzędnych
@@ -32,14 +18,15 @@ public class Main {
 
         // Tworzenie i testowanie odcinka
         Segment segment = new Segment(point, newPoint);
+        System.out.println(segment.toString());
         System.out.println("Segment length: " + segment.length());
+        point.translate(-2,0);
+        System.out.println("Segment length after change point: " + segment.length());
 
         // Tworzenie obiektów Point
         Point point1 = new Point(3.5, 7.2);
         Point point2 = new Point(5.0, 10.0);
         Point point3 = new Point(1.0, 1.0);
-
-        //Segment[] s = new Segment[3];
 
         // Tworzenie tablicy Segmentów
         Segment[] segments = {

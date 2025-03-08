@@ -71,7 +71,7 @@ public class Polygon {
             if (point.getY() > maxY) maxY = point.getY();
         }
 
-        return new BoundingBox(minX, maxY, maxX - minX, maxY - minY);
+        return new BoundingBox(minX, minY, maxX - minX, maxY - minY);
     }
 
     // Przykładowa metoda main do testowania

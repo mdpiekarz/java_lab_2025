@@ -34,7 +34,7 @@ public class SvgScene {
             if (polygon != null) {
                 BoundingBox box = polygon.boundingBox();
                 maxX = Math.max(maxX, box.x() + box.width());
-                maxY = Math.max(maxY, box.y());
+                maxY = Math.max(maxY, box.y()+ box.height());
             }
         }
 

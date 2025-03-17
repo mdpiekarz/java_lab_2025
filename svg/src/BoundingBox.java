@@ -4,7 +4,7 @@ public record BoundingBox(double x, double y, double width, double height) {}
 // Można go sobie wyobrazić jako ramkę, która obejmuje wszystkie punkty wielokąta — nie wychodząc poza jego krawędzie
 // bardziej, niż to konieczne.
 //
-//Dla dwuwymiarowej przestrzeni (jak w naszym przypadku) prostokątny obrys dla sceny svg określamy za pomocą:
+//Dla dwuwymiarowej przestrzeni (jak w naszym przypadku) prostokątny obrys określamy za pomocą:
 //współrzędnych lewego górnego rogu: (minX, minY)
 //szerokości: maxX - minX
 //wysokości: maxY - minY

@@ -37,7 +37,8 @@ public class Segment {
         return "Segment: ["+ start.toString()+ ", "+ end.toString()+"]";
     }
 
-    //metoda potrzebna do zad 2 z lab 3 wyznaczająca odcinki prostopadłe do segment, wychodzące z punktu point, o długoci odcinka segment
+    //metoda potrzebna do zad 2 z lab 3 wyznaczająca odcinek prostopadły do segment, przechodzący przez punkt point, o długoci odcinka segment
+
     public static Segment[] perpendicular(Segment segment, Point point) {
         // Obliczanie współczynników nachylenia segmentu
         double x1 = segment.start.getX();
@@ -79,5 +80,27 @@ public class Segment {
                 new Segment(point, new Point(x1_intersect, y1_intersect)),
                 new Segment(point, new Point(x2_intersect, y2_intersect))
         };
+    }
+    public static Segment[] perpendicular(Segment segment, Point point, double length) {
+        Segment[] perpendiculars = perpendicular(segment, point);
+        double scale = length / segment.length();
+
+        for (Segment s : perpendiculars) {
+            double dx = s.end.getX() - s.start.getX();
+            double dy = s.end.getY() - s.start.getY();
+            s.end.setX(s.start.getX() + dx * scale);
+            s.end.setY(s.start.getY() + dy * scale);
+        }
+
+        return perpendiculars;
+    }
+
+
+    public Point getStart() {
+        return start;
+    }
+
+    public Point getEnd() {
+        return end;
     }
 }

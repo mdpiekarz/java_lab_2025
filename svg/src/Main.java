@@ -25,7 +25,7 @@ public class Main {
 
         // Tworzenie obiektów Point
         Point point1 = new Point(3.5, 7.2);
-        Point point2 = new Point(5.0, 10.0);
+        Point point2 = new Point(2., 2.0);
         Point point3 = new Point(1.0, 1.0);
 
         // Tworzenie tablicy Segmentów
@@ -38,5 +38,8 @@ public class Main {
         // Znajdowanie i wyświetlanie najdłuższego segmentu
         Segment longest = Segment.findLongestSegment(segments);
         System.out.println("Longest segment length: " + longest.length());
+
+        Polygon square = Polygon.square(segments[1],null);
+        System.out.println(square);
     }
 }

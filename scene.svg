@@ -1,5 +1,5 @@
-<svg xmlns='http://www.w3.org/2000/svg' width='110' height='70'>
-<polygon points='110.00,60.00 70.00,60.00 70.00,70.00 60.00,70.00' fill='none' stroke='black' />
-<polygon points='20.00,20.00 30.00,20.00 30.00,30.00 20.00,30.00' fill='none' stroke='black' />
-<polygon points='40.00,40.00 50.00,40.00 50.00,50.00 40.00,50.00' fill='none' stroke='black' />
+<svg xmlns='http://www.w3.org/2000/svg' width='50.00' height='50.00'>
+<ellipse cx="3.00" cy="6.00" rx="2.00" ry="5.00" style="fill:none;stroke:black;stroke-width:1,00" />
+<polygon points='20.00,20.00 30.00,20.00 30.00,30.00 20.00,30.00' style="fill:none;stroke:black;stroke-width:1,00" />
+<polygon points='40.00,40.00 50.00,40.00 50.00,50.00 40.00,50.00' style="fill:none;stroke:black;stroke-width:1,00" />
 </svg>

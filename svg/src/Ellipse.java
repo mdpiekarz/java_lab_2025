@@ -14,18 +14,14 @@ public class Ellipse extends Shape {
 
     @Override
     public String toSvg() {
-        return String.format(Locale.ENGLISH, "<ellipse cx=\"%f\" cy=\"%f\" rx=\"%f\" ry=\"%f\" style=\"%s\" />",
+        return String.format(Locale.ENGLISH, "<ellipse cx=\"%.2f\" cy=\"%.2f\" rx=\"%.2f\" ry=\"%.2f\" %s />",
                 center.getX(), center.getY(), rx, ry, style.toSvg());
 
     }
 
     @Override
     public BoundingBox boundingBox() {
-        double x = center.getX() - rx;
-        double y = center.getY() - ry;
-        double width = 2 * rx;
-        double height = 2 * ry;
-        return new BoundingBox(x, y, width, height);
+        return new BoundingBox(center.getX() - rx, center.getY() - ry, rx * 2, ry * 2);
     }
 }
 

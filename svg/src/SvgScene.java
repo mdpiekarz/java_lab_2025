@@ -14,8 +14,8 @@ public class SvgScene {
     }
 
     // Metoda toSvg() generująca scenę SVG z wszystkimi wielokątami
-    public String toSvg(int width, int hight) {
-        StringBuilder sb = new StringBuilder(String.format(Locale.US,"<svg xmlns='http://www.w3.org/2000/svg' width='%d' height='%d'>\n",width,hight));
+    public String toSvg(double width, double hight) {
+        StringBuilder sb = new StringBuilder(String.format(Locale.US,"<svg xmlns='http://www.w3.org/2000/svg' width='%.2f' height='%.2f'>\n",width,hight));
         for (Shape shape : shapes) {
             if (shape != null) {
                 sb.append(shape.toSvg()).append("\n");
@@ -27,19 +27,17 @@ public class SvgScene {
 
     public void save(String filePath) {
 
-        double maxX = Double.MIN_VALUE;
-        double maxY = Double.MIN_VALUE;
-
-        for (Shape shape : shapes) {
-            if (shape != null) {
-                BoundingBox box = (shape.boundingBox());
-                maxX = Math.max(maxX, box.x() + box.width());
-                maxY = Math.max(maxY, box.y()+ box.height());
-            }
+        double maxX = 0, maxY = 0;
+        for(Shape shape: shapes) {
+            if(shape == null)
+                continue;
+            BoundingBox shapeBB = shape.boundingBox();
+            maxX = Math.max(maxX, shapeBB.x() + shapeBB.width());
+            maxY = Math.max(maxY, shapeBB.y() + shapeBB.height());
         }
 
-        int width = (int) Math.ceil(maxX);
-        int height = (int) Math.ceil(maxY);
+        double width = maxX;
+        double height = maxY;
 
         try (FileWriter writer = new FileWriter(filePath)) {
             writer.write(toSvg(width, height));
@@ -61,7 +59,7 @@ public class SvgScene {
         Polygon polygon3 = new Polygon(points3,null);
         Polygon polygon4 = new Polygon(points4,null);
 
-        Ellipse ellipse = new Ellipse(new Point(0, 0),2,5,null);
+        Ellipse ellipse = new Ellipse(new Point(3, 6),2,5,null);
 
         SvgScene scene = new SvgScene();
         scene.addShape(polygon1);

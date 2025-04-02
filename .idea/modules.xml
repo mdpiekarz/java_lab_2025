@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/genealogy/genealogy.iml" filepath="$PROJECT_DIR$/genealogy/genealogy.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/java_lab_2025.iml" filepath="$PROJECT_DIR$/.idea/java_lab_2025.iml" />
       <module fileurl="file://$PROJECT_DIR$/svg/svg.iml" filepath="$PROJECT_DIR$/svg/svg.iml" />
       <module fileurl="file://$PROJECT_DIR$/svg1/svg1.iml" filepath="$PROJECT_DIR$/svg1/svg1.iml" />

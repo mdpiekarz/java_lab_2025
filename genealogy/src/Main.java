@@ -49,7 +49,7 @@ public class Main {
 //            System.out.println(p);
 //        }
 
-        //lab6-start-------------------------------------------------------------------------
+        //-----------lab6-start-------------------------------------------------------------------------
         System.out.println(Person.fromCsvLine("Marek Kowalski,15.05.1899,25.06.1957,,"));
         try {
             osoby=Person.fromCsv("family.csv");

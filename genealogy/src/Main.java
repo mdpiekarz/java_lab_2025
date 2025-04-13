@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
 
             List<Person> osoby = new ArrayList<>();
 //            Person jan = new Person("Jan", "Kowalski", LocalDate.of(1990, 5, 20),null);
@@ -42,7 +42,7 @@ public class Main {
 //        rodzina.add(piotr,maria);
 //        //System.out.println("Wyszukana osoba: " + rodzina.get("Piotr Zielinski"));
 //
-//        Person jan2 = new Person("Jan", "Kowalski", LocalDate.of(1985, 3, 10), null);
+//        Person jan2 = new Person("Jan", "Kowalski", LocalDate.of(1985, 3, 10),null);
 //        rodzina.add(jan2);
 //        System.out.println("Wyszukane osoby o imieniu Jan Kowalski:");
 //        for (Person p : rodzina.get("Jan Kowalski")) {
@@ -57,6 +57,13 @@ public class Main {
             System.err.println("Błąd podczas odczytu linii: " + e.getMessage());;
         }
         System.out.println(osoby);
+
+        System.out.println("_____________Zapis i odczyt listy obiektów Person - pliki binarne__________________________________________");
+
+        Person.toBinaryFile(osoby, "family.bin");
+        List<Person> loadPeople = Person.fromBinaryFile("family.bin");
+        for(Person person: loadPeople)
+            System.out.println(person);
 
     }
 

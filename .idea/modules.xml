@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/chatClient/chatClient.iml" filepath="$PROJECT_DIR$/chatClient/chatClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chatServer/chatServer.iml" filepath="$PROJECT_DIR$/chatServer/chatServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/genealogy/genealogy.iml" filepath="$PROJECT_DIR$/genealogy/genealogy.iml" />
       <module fileurl="file://$PROJECT_DIR$/genricList/genricList.iml" filepath="$PROJECT_DIR$/genricList/genricList.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/java_lab_2025.iml" filepath="$PROJECT_DIR$/.idea/java_lab_2025.iml" />

@@ -5,7 +5,7 @@ import java.nio.file.Path;
 public class ClientThread extends Thread {
     private Socket socket;
     private PrintWriter writer;
-    private boolean running;
+
 
     public ClientThread(String address, int port) {
         try {

@@ -8,14 +8,21 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <Separator prefWidth="200.0" />
-   <TextArea fx:id="outputTextArea" prefHeight="200.0" prefWidth="200.0" />
    <HBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="200.0">
       <children>
-         <TextField fx:id="inputTextField" onAction="#onSendButtonClick" prefWidth="220.0" />
-          <Button fx:id="sendButton" onAction="#onSendButtonClick" text="Send" />
+         <Label text="login:" />
+         <TextField fx:id="loginField" />
+      </children>
+   </HBox>
+   <Button fx:id="loginButton" onAction="#onLoginButtonClick" text="Login" />
+   <Separator prefWidth="200.0" />
+   <TextArea fx:id="outputArea" prefHeight="200.0" prefWidth="200.0" />
+   <HBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="200.0">
+      <children>
+         <TextField fx:id="inputField" onAction="#onSendButtonClick" prefWidth="220.0" />
+          <Button onAction="#onSendButtonClick" text="Send" />
       </children>
    </HBox>
    <Label text="online:" />
-   <ListView fx:id="onlineListView" prefHeight="200.0" prefWidth="100.0" />
+   <ListView fx:id="onlineList" prefHeight="200.0" prefWidth="100.0" />
 </VBox>

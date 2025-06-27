@@ -1,4 +1,4 @@
-module com.example.guichatclient {
+module com.example.guiclient {
     requires javafx.controls;
     requires javafx.fxml;
 

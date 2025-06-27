@@ -9,6 +9,7 @@
         <module name="site" />
         <module name="GUIChatClient" />
         <module name="shop" />
+        <module name="breakout" />
         <module name="site1" />
       </profile>
     </annotationProcessing>

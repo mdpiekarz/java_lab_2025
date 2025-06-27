@@ -13,15 +13,56 @@ public class HelloController {
    // private Label welcomeText;
 
     @FXML
-    private TextField inputTextField;
+    private TextField inputField;
     @FXML
-    private TextArea outputTextArea;
+    private TextArea outputArea;
+    @FXML
+    private ListView onlineList;
+
+    @FXML
+    private TextField loginField;
+
+    @FXML
+    private Button loginButton;
+
+
+    private ClientReciver clientReciver;
+
+    private ObservableList<String> onlineUsers;
+
+    @FXML
+    public void initialize() {
+        onlineUsers = FXCollections.observableArrayList();
+        onlineList.setItems(onlineUsers);
+    }
 
     @FXML
     protected void onSendButtonClick() {
-       outputTextArea.setText(outputTextArea.getText() +"\n" +inputTextField.getText());
-       inputTextField.clear();
+        String message = inputField.getText();
+        //String output = outputArea.getText()+"\n"+message;
+        //outputArea.setText(output+"\n"); //zakomentować w zad 3
+        //outputArea.setScrollTop(Double.MAX_VALUE);
+        inputField.setText("");
+        clientReciver.broadcast(message);
     }
 
+    @FXML
+    protected void onLoginButtonClick(){
+        clientReciver.login(loginField.getText());
+        loginButton.setDisable(true);
+    }
 
+    public void setClientReciver(ClientReciver clientReciver) {
+        this.clientReciver = clientReciver;
+    }
+
+    public void broadcast(String msg){
+        outputArea.appendText(msg+"\n");
+    }
+
+    public void online(String msg){
+        onlineUsers.clear();
+        String[] users = msg.split(" ");
+        onlineUsers.addAll(users);
+    }
 }
